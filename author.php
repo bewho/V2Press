@@ -14,7 +14,7 @@ get_header();
             <p class="xsmall fade"><?php vp_breadcrumb(); ?></p>
           </div>
           <div class="inner">
-            <h1 class="member-name xxlarge"><?php echo $user->user_login; ?><?php if ( $user->ID == get_current_user_id() ) { ?>  <span class="snow lighter xsmall"><?php _e( '(This is you!)', 'v2press' ); ?></span><?php } ?></h1>
+            <h1 class="member-name xxlarge"><?php echo $user->user_login; ?><?php if ( $user->ID == get_current_user_id() ) { ?> （ <?php echo $user->display_name; ?> ）</h1> <span class="snow lighter xsmall"><?php _e( '(This is you!)', 'v2press' ); ?></span><?php } ?>
             <?php vp_user_avatar_link( 72, $user->ID ); ?>
             <p class="fade xsmall"><?php printf( __( 'Member %s, created at %s.', 'v2press' ), $user->ID, date_i18n( 'Y-n-j g:i a', strtotime( $user->user_registered ) ) ); ?></p>
             <?php vp_following(); ?>
